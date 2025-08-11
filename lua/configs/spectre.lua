@@ -6,8 +6,7 @@ return {
         require("spectre").toggle()
       end,
       mode = "n",
-      desc = "Toggle Spectre",
+      desc = "Find and Replace",
     },
   },
 }
-

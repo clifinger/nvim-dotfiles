@@ -64,11 +64,12 @@ In addition to NvChad's defaults, the following shortcuts have been added to fac
 | `<leader>gg` | Launch the Lazygit interface. |
 | `<leader>aa` | Toggle the Copilot Chat panel. |
 | `<leader>aA` | Toggle Copilot completions on/off. |
-| `<c-a>` | Accept a Copilot completion suggestion. |
+| `<c-y>` | Accept a Copilot completion suggestion or a diff |
 | `-` | Toggle the Oil file explorer. |
 | `<leader>aq` | Quick Chat(Copilot). |
 | `<leader>ap` | Prompt actions (Copilot). |
 | `<leader>ax` | Clear chat (Copilot). |
+| `q` | Close the Copilot Chat panel in Normal Mode. Close Nvim-Tree |
 
 ---
 

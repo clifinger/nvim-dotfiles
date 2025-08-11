@@ -7,29 +7,29 @@ local user = vim.env.USER or "User"
 user = user:sub(1, 1):upper() .. user:sub(2)
 
 M.opts = {
-  auto_insert_mode = false,
-  sticky = { "#buffer" },
+  auto_insert_mode = true,
+  auto_select = true,
   question_header = "  " .. user .. " ",
   answer_header = "  Copilot ",
   window = {
-    width = 0.3,
+    width = 0.4,
   },
 }
 
 M.keys = {
+
+  -- CopilotChat mappings
+  { "<c-s>", "<CR>", ft = "copilot-chat", desc = "Submit Prompt", remap = true },
+  { "<leader>a", "", desc = "+ai", mode = { "n", "v" } },
   {
-    "<C-a>",
-    "copilot#Accept('<C-a>')",
+    "<C-y>",
+    "copilot#Accept('<C-y>')",
     mode = "i",
     expr = true,
     silent = true,
     replace_keycodes = false,
     desc = "Accept Copilot suggestion",
   },
-
-  -- CopilotChat mappings
-  { "<c-s>", "<CR>", ft = "copilot-chat", desc = "Submit Prompt", remap = true },
-  { "<leader>a", "", desc = "+ai", mode = { "n", "v" } },
   {
     "<leader>aA",
     function()
@@ -67,9 +67,7 @@ M.keys = {
         prompt = "Quick Chat: ",
       }, function(input)
         if input ~= "" then
-          require("CopilotChat").ask(input, {
-            selection = require("CopilotChat.select").buffer,
-          })
+          require("CopilotChat").ask(input)
         end
       end)
     end,
@@ -92,6 +90,7 @@ M.config = function(_, opts)
   }
   vim.g.copilot_no_tab_map = true
   local chat = require "CopilotChat"
+
   chat.setup(opts)
 
   vim.api.nvim_create_autocmd("FileType", {
