@@ -1,3 +1,4 @@
+---@diagnostic disable: different-requires
 return {
   {
     "folke/noice.nvim",
@@ -32,6 +33,12 @@ return {
     priority = 1000,
     lazy = false,
     keys = require("configs.snacks").keys,
+    opts = function()
+      -- On charge directement la table retournée par notre fichier
+      return {
+        lazygit = require "configs.lazygit",
+      }
+    end,
   },
   {
     "folke/which-key.nvim",
@@ -75,7 +82,6 @@ return {
     keys = require("configs.telescope").keys,
     config = function()
       require "configs.telescope"
-      ---@diagnostic disable: different-requires
       require("telescope").load_extension "ui-select"
     end,
   },
