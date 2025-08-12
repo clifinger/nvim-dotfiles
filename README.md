@@ -6,6 +6,64 @@ The main goal is to build upon NvChad's solid foundation while keeping the custo
 
 ---
 
+## Installation
+
+This configuration is based on NvChad. Before proceeding, ensure you have the necessary prerequisites installed.
+
+### Prerequisites
+
+- **Neovim v0.11+**
+- **A Nerd Font** as your terminal font.
+  - Make sure the nerd font you set doesn't end with `Mono` to prevent small icons.
+  - Example: `JetbrainsMono Nerd Font` and not `JetbrainsMono Nerd Font Mono`.
+- **`ripgrep`** is required for grep searching with Telescope (OPTIONAL).
+  - **Debian/Ubuntu**: `sudo apt-get install ripgrep`
+  - **macOS (Homebrew)**: `brew install ripgrep`
+  - **Arch Linux**: `sudo pacman -S ripgrep`
+  - **Other**: See the [ripgrep installation guide](https://github.com/BurntSushi/ripgrep#installation).
+- **`gcc`**:
+  - Windows users must have `mingw` installed and set on path.
+- **`make`**:
+  - Windows users must have `GnuWin32` installed and set on path.
+- **`mise` or `asdf`**: For managing tool versions (optional, but recommended).
+  - Follow the official instructions at the [mise website](https://mise.jdx.dev/getting-started.html) or the [asdf website](https://asdf-vm.com/guide/getting-started.html) to install it.
+
+Before installation, make sure to delete your old Neovim folders:
+
+```bash
+# For Linux/macOS
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+```
+
+### Setup
+
+1. **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/clifinger/nvim-for-dev.git ~/.config/nvim
+    ```
+
+2. **Launch Neovim**:
+
+    Open Neovim. The plugins will be installed automatically on the first run.
+
+    ```bash
+    nvim
+    ```
+
+3. **Install Tools**:
+
+    Run the `:MasonInstallAll` command after `lazy.nvim` finishes downloading plugins to install all the necessary LSPs, formatters, and linters.
+
+---
+
+## Update
+
+To update the configuration and plugins, use the `Lazy sync` command.
+
+---
+
 ## Additional Plugins
 
 The following plugins have been added to enhance the core functionality:

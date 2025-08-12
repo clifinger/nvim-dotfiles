@@ -34,7 +34,6 @@ return {
     lazy = false,
     keys = require("configs.snacks").keys,
     opts = function()
-      -- On charge directement la table retournée par notre fichier
       return {
         lazygit = require "configs.lazygit",
       }
@@ -66,16 +65,12 @@ return {
     cmd = require("configs.render-markdown").cmd,
     dependencies = require("configs.render-markdown").dependencies,
   },
-
-  -- { import = "nvchad.blink.lazyspec" },
-
   {
     "nvim-pack/nvim-spectre",
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = require("configs.spectre").keys,
     opts = {},
   },
-
   {
     "nvim-telescope/telescope.nvim",
     lazy = false,
@@ -85,12 +80,10 @@ return {
       require("telescope").load_extension "ui-select"
     end,
   },
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = require "configs.treesitter",
   },
-
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     dependencies = {
@@ -112,7 +105,6 @@ return {
   },
   {
     "echasnovski/mini.ai",
-    -- Next-gen motion and textobject plugin
     event = "VeryLazy",
     opts = function()
       return require "configs.mini"
