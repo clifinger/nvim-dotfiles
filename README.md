@@ -17,6 +17,11 @@ The following plugins have been added to enhance the core functionality:
 | **[oil.nvim](https://github.com/stevearc/oil.nvim)** | A file explorer that treats directories like editable buffers for seamless navigation and file operations. |
 | **[spectre.nvim](https://github.com/nvim-pack/nvim-spectre)** | A powerful project-wide search and replace tool. |
 | **[lazygit](https://github.com/folke/snacks.nvim/blob/main/docs/lazygit.md)** | Provides an integration for the [lazygit](https://github.com/jesseduffield/lazygit) terminal UI for a more intuitive Git workflow. |
+| **[noice.nvim](https://github.com/folke/noice.nvim)** | A plugin for better UI for messages, cmdline and popups. |
+| **[telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)** | A Telescope extension to use Telescope for `vim.ui.select`. |
+| **[nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)** | Shows the context of the function/class you are in at the top of the editor. |
+| **[indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)** | Adds indentation guides. |
+| **[render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)** | Renders markdown in a buffer. |
 | **[mini.ai](https://github.com/echasnovski/mini.ai)** | Extends text objects and motions for nodes in the syntax tree, enhancing code manipulation. |
 
 ---
@@ -70,6 +75,12 @@ In addition to NvChad's defaults, the following shortcuts have been added to fac
 | `<leader>ap` | Prompt actions (Copilot). |
 | `<leader>ax` | Clear chat (Copilot). |
 | `q` | Close the Copilot Chat panel in Normal Mode. Close Nvim-Tree |
+| `<leader>snl` | Show last message (Noice). |
+| `<leader>snh` | Show history (Noice). |
+| `<leader>sna` | Show all messages (Noice). |
+| `<leader>snd` | Dismiss all messages (Noice). |
+| `<leader>ut` | Toggle Treesitter Context. |
+| `<leader>ug` | Toggle Indentation Guides. |
 
 ---
 

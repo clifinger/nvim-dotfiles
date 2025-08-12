@@ -1,6 +1,13 @@
+local config = require("nvchad.configs.telescope").defaults
+
 return {
+  defaults = config,
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {},
+    },
+  },
   keys = {
-    -- find files
     {
       "<leader> ",
       function()

@@ -1,10 +1,26 @@
 return {
   {
+    "folke/noice.nvim",
+    event = require("configs.noice").event,
+    opts = require("configs.noice").opts,
+    keys = require("configs.noice").keys,
+    config = require("configs.noice").config,
+  },
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    opts = {},
+  },
+  {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     opts = function()
       return require "configs.nvimtree"
     end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    lazy = require("configs.treesitter-context").lazy,
+    opts = require("configs.treesitter-context").opts,
   },
   {
     "stevearc/conform.nvim",
@@ -39,9 +55,9 @@ return {
   },
   {
     "MeanderingProgrammer/render-markdown.nvim",
-    lazy = false,
-    cmd = { "RenderMarkdown", "RenderMarkdownToggle" },
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    lazy = require("configs.render-markdown").lazy,
+    cmd = require("configs.render-markdown").cmd,
+    dependencies = require("configs.render-markdown").dependencies,
   },
 
   -- { import = "nvchad.blink.lazyspec" },
@@ -57,6 +73,11 @@ return {
     "nvim-telescope/telescope.nvim",
     lazy = false,
     keys = require("configs.telescope").keys,
+    config = function()
+      require "configs.telescope"
+      ---@diagnostic disable: different-requires
+      require("telescope").load_extension "ui-select"
+    end,
   },
 
   {
@@ -76,5 +97,19 @@ return {
     opts = require("configs.copilot").opts,
     config = require("configs.copilot").config,
     keys = require("configs.copilot").keys,
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = require("configs.indent-blankline").event,
+    main = require("configs.indent-blankline").main,
+    opts = require("configs.indent-blankline").opts,
+  },
+  {
+    "echasnovski/mini.ai",
+    -- Next-gen motion and textobject plugin
+    event = "VeryLazy",
+    opts = function()
+      return require "configs.mini"
+    end,
   },
 }
