@@ -49,9 +49,7 @@ In addition to NvChad's defaults, the following shortcuts have been added to fac
 | `jk` | (Insert Mode) Exit Insert mode to return to Normal mode. |
 | `S-K` | (Normal Mode) See documentation/signature for the current word under the cursor. |
 | `<c-s>` | Save the current file and return to Normal mode. |
-| `<c-q>` | Close the current window. |
-| `ZZ` | Save the current file and close Neovim. |
-| `ZQ` | Close Neovim without saving. |
+| `<c-q>` | Close the current window, split, buffer or exit Neovim |
 | `<leader><leader>` | Find files in the project (Telescope). |
 | `<leader>v` | Create a new vertical split. |
 | `<leader>h` | Create a new horizontal split. |
