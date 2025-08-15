@@ -2,7 +2,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "bearded-arc",
+  theme = "one_light",
 
   hl_override = {
     Comment = { italic = true },
@@ -14,6 +14,8 @@ M.ui = {
   tabufline = {
     lazyload = false,
   },
+  -- cmp = { lspkind = false },
+  -- lsp = { signature = { disabled = true } },
 }
 
 return M

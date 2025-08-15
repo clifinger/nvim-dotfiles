@@ -19,6 +19,13 @@ local options = {
         "$FILENAME",
       },
     },
+    ["zigfmt"] = {
+      command = "zig",
+      args = {
+        "fmt",
+        "--stdin",
+      },
+    },
   },
   formatters_by_ft = {
     lua = { "stylua" },
