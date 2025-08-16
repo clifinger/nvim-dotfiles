@@ -2,6 +2,7 @@ require "nvchad.options"
 
 local o = vim.o
 o.cursorlineopt = "both"
+o.termguicolors = true
 o.relativenumber = true
 o.swapfile = false
 o.completeopt = "popup,noinsert,noselect"
